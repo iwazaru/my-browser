@@ -1,5 +1,5 @@
 {
-  "name": "svelte-app",
+  "name": "my-browser",
   "version": "1.0.0",
   "scripts": {
     "build": "rollup -c",
@@ -16,6 +16,7 @@
     "svelte": "^3.0.0"
   },
   "dependencies": {
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "ua-parser-js": "^0.7.21"
   }
 }
