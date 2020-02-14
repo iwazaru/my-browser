@@ -1,30 +1,49 @@
 <script>
-	export let name;
+  import UAParser from 'ua-parser-js';
+
+  const parser = new UAParser(navigator.userAgent);
+  const browser = parser.getBrowser();
+  const os = parser.getOS();
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <h1>My browser</h1>
+  <dl>
+    <dt>browser</dt>
+    <dd>{browser.name} {browser.version}</dd>
+
+    <dt>operating system</dt>
+    <dd>{os.name} {os.version}</dd>
+  </dl>
 </main>
 
 <style>
+
 	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
+    font-size: 62.5%; 
 		margin: 0 auto;
+		max-width: 320px;
+		padding: 1em;
+		text-align: center;
 	}
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
+  h1 {
+    font-size: 2rem;
+  }
 
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  dl {
+    font-size: 1.6rem;
+    margin: auto;
+  }
+
+  dt {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+
+  dd {
+    background: rgba(0, 0, 0, .05);
+    margin: .5rem;
+    padding: .5rem;
+  }
 </style>
